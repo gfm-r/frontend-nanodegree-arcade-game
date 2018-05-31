@@ -89,7 +89,19 @@ class Player {
     this.x = 200;
     this.y = 400;
     this.score++;
-    console.log('score' + this.score);
+    ////////////////////////////////////////////
+    if (this.score == 10) {
+      swal({
+        title: 'Congratulation! You Won!',
+        icon: 'success',
+        button: 'Play again!',
+      }).then(function() {
+        window.location.reload();
+      });
+
+    } //for if
+    //////////////////////////////////
+
   }
 }
 let player = new Player(200, 400);
@@ -107,4 +119,4 @@ document.addEventListener('keyup', function(e) {
   };
   console.log(e.keyCode);
   player.handleInput(allowedKeys[e.keyCode]);
-});
+});;
