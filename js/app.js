@@ -43,6 +43,7 @@ class Player {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
+    this.score = 0;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/char-boy.png';
@@ -53,13 +54,43 @@ class Player {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-
+    if (player.x >= (en1.x - 70) && player.x <= (en1.x + 70) && player.y >= (en1.y - 70) && player.y <= (en1.y + 50)) {
+      this.x = 200;
+      this.y = 400;
+    }
+    if (player.x >= (en2.x - 70) && player.x <= (en2.x + 70) && player.y >= (en2.y - 70) && player.y <= (en2.y + 50)) {
+      this.x = 200;
+      this.y = 400;
+    }
+    if (player.x >= (en3.x - 70) && player.x <= (en3.x + 70) && player.y >= (en3.y - 70) && player.y <= (en3.y + 50)) {
+      this.x = 200;
+      this.y = 400;
+    }
   }
   // Draw the enemy on the screen, required method for game
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
-  handleInput() {}
+  handleInput(key) {
+    if (key == 'up') {
+      if (this.y == 60)
+        this.get_Score();
+      else
+        this.y += -85;
+    } else if (key == 'down' && this.y < 400) {
+      this.y += 85;
+    } else if (key == 'right' && this.x < 400) {
+      this.x += +100;
+    } else if (key == 'left' && this.x > 1) {
+      this.x += -100;
+    }
+  }
+  get_Score() {
+    this.x = 200;
+    this.y = 400;
+    this.score++;
+    console.log('score' + this.score);
+  }
 }
 let player = new Player(200, 400);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,6 +105,6 @@ document.addEventListener('keyup', function(e) {
     39: 'right',
     40: 'down'
   };
-
+  console.log(e.keyCode);
   player.handleInput(allowedKeys[e.keyCode]);
 });
