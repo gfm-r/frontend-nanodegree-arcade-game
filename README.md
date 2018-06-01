@@ -6,10 +6,12 @@ Students should use this [rubric](https://review.udacity.com/#!/projects/2696458
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
 ## How to play the game
--Open the html file and use the arrow keys to control the player.
+-Click on [this](https://gfm-r.github.io/frontend-nanodegree-arcade-game/) or download the project folder and open the html file
+
+-Use the arrow keys to control the player.
 
 ## Dependencies
-You don't have any dependencies to paly this game.
+You don't have any dependencies to play this game.
 
 ## Screenshot
 ![alt text](https://github.com/gfm-r/frontend-nanodegree-arcade-game/blob/master/images/ScreenShot.png) "Screenshot"
